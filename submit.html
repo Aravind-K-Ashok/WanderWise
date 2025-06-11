@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Write a Blog</title>
+  <link rel="stylesheet" href="style2.css" >
+  <style>
+    @media (max-width: 1200px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .list {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      img.logo {
+        width: 150px;
+      }
+
+      #bg {
+        width: 90%;
+      }
+    }
+    @media (max-width: 768px) {
+      body {
+        max-height: 80vh;
+      }
+      button {
+        width: 100%;
+      }
+    }
+    @media (max-width: 480px) {
+      body {
+        min-height: 80vh;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .list {
+        padding: 0;
+        gap: 5px;
+      }
+      img.logo {
+        width: 120px;
+      }
+      button {
+        font-size: 12px;
+        width: 90%;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html"><img class="logo" src="111.png" alt="logo" /></a>
+    <nav>
+      <ul class="list">
+        <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+      </ul>
+      
+      <a href="contact.html" target="_blank" style="margin-left: 50px;">
+        <button class="button">Contact</button>
+      </a>
+    </nav>
+  </header>
+  <div class="form">
+    <h1 style="text-align: center;">Write Your Blog</h1>
+    <div class="innerdiv">
+      <form id="new-post-form">
+        <label for="name">Enter your name:</label><br />
+        <input id="name" type="text" placeholder="Your Name" required /><br />
+
+        <label for="excerpt">Excerpt</label><br />
+        <input id="excerpt" type="text" placeholder="Short Excerpt" required /><br />
+
+        <label for="date">Date</label><br />
+        <input id="date" type="date" required /><br />
+
+        <label for="image">Add Image</label><br />
+        <input id="image" type="file" accept="image/*" required /><br />
+
+        <label for="title">Title</label><br />
+        <input id="title" type="text" placeholder="Title" required /><br />
+
+        <label for="body">Content</label><br />
+        <textarea
+          id="body"
+          rows="10"
+          placeholder="Write your blog content here..."
+          required
+        ></textarea
+        ><br />
+
+        <button type="submit" class="a">Submit</button>
+        <button type="reset" class="b">Reset</button>
+        <p id="form-status" class="form-status"></p>
+      </form>
+    </div>
+    
+  </div>
+
+  <!-- Supabase JS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script>
+    // Initialize Supabase client using CDN global (no import statement)
+    // Find your anon/public key and project URL in your Supabase dashboard under Project Settings > API
+    const supabaseUrl = 'https://zeyhknekioqqmgfpdsnr.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpleWhrbmVraW9xcW1nZnBkc25yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkxMDYwMjcsImV4cCI6MjA2NDY4MjAyN30.mKgF78Hly1YnjAbSn7eknjCIiYwlQVS52_2Mqh5oGaY';
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("new-post-form");
+      const statusText = document.getElementById("form-status");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        statusText.textContent = "";
+        statusText.className = "form-status";
+
+        const author = document.getElementById("name").value.trim();
+        const excerpt = document.getElementById("excerpt").value.trim();
+        const body = document.getElementById("body").value.trim();
+        const dateValue = document.getElementById("date").value; // "YYYY-MM-DD"
+        const imageFile = document.getElementById("image").files[0];
+        const title = document.getElementById("title").value.trim();
+
+        if (!author || !title || !excerpt || !body || !dateValue || !imageFile) {
+          statusText.textContent = "All fields are required.";
+          statusText.classList.add("error");
+          return;
+        }
+
+        try {
+          // Generate slug from title
+          const slug = title
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "");
+
+          // Prepare a unique filename in your "post-images" bucket
+          const timestamp = Date.now();
+          const filePath = `public/${slug}-${timestamp}`;
+
+          // Upload image to Supabase Storage (bucket: "post-images")
+          const { data: uploadData, error: uploadError } =
+            await supabaseClient.storage
+              .from("post-images")
+              .upload(filePath, imageFile, {
+                cacheControl: "3600",
+                upsert: false,
+              });
+
+          if (uploadError) {
+            console.error("Storage upload error:", uploadError);
+            throw uploadError;
+          }
+
+          // Get public URL for the uploaded image
+          const {
+            data: { publicUrl },
+          } = supabaseClient.storage.from("post-images").getPublicUrl(filePath);
+
+          // Prepare the date in ISO format (Supabase will store as timestamp)
+          const isoDate = new Date(dateValue).toISOString();
+
+          // Insert a new row into "posts" table
+          const { data, error: insertError } = await supabaseClient.from("posts").insert([
+            {
+              author: author,
+              title: title,
+              excerpt: excerpt,
+              body: body,
+              date: isoDate,
+              image_url: publicUrl,
+              slug: slug,
+            },
+          ]);
+
+          if (insertError) {
+            console.error("Error inserting post:", insertError);
+            throw insertError;
+          }
+
+          statusText.textContent = "Post published successfully!";
+          statusText.classList.add("success");
+          form.reset();
+        } catch (error) {
+          console.error("Error publishing post:", error);
+          statusText.textContent = "Error publishing post. Try again.";
+          statusText.classList.add("error");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

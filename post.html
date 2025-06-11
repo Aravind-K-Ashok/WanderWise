@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog Post</title>
+  <link rel="stylesheet" href="style2.css" />
+  <style>
+    .post-container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(34,34,59,0.08);
+      padding: 2rem;
+    }
+    .post-title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #22223b;
+    }
+    .post-meta {
+      color: #888;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .post-image {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      background: #e9ecef;
+    }
+    .post-body {
+      font-size: 1.15rem;
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: #4f8cff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img class="logo" src="images/111.png" alt="logo" /></a>
+    <nav>
+      <ul class="list">
+         <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+      </ul>
+      <a href="submit.html"><button class="button2">WRITE A BLOG</button></a>
+      <a href="contact.html" target="_blank" style="margin-left: 50px;">
+        <button class="button">Contact</button>
+      </a>
+    </nav>
+  </header>
+  <div class="post-container" id="post-container">
+    <p>Loading post...</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script>
+    
+    const supabaseUrl = 'https://zeyhknekioqqmgfpdsnr.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpleWhrbmVraW9xcW1nZnBkc25yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkxMDYwMjcsImV4cCI6MjA2NDY4MjAyN30.mKgF78Hly1YnjAbSn7eknjCIiYwlQVS52_2Mqh5oGaY';
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+    // Get slug from URL
+    function getSlug() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('slug');
+    }
+
+    async function loadPost() {
+      const slug = getSlug();
+      const container = document.getElementById('post-container');
+      // Debug: Show slug at the top
+      container.innerHTML = `<div style="color:#888;font-size:0.95rem;margin-bottom:1rem;">[DEBUG] Slug: <b>${slug}</b></div>`;
+      if (!slug) {
+        container.innerHTML += '<p>Post not found (missing slug).</p>';
+        console.error('[DEBUG] No slug in URL');
+        return;
+      }
+      const { data: posts, error } = await supabaseClient
+        .from('posts')
+        .select('*')
+        .eq('slug', slug)
+        .limit(1);
+      // Debug: Log response
+      console.log('[DEBUG] Supabase response:', { posts, error });
+      if (error) {
+        container.innerHTML += `<p style='color:red;'>Supabase error: ${error.message}</p>`;
+        return;
+      }
+      if (!posts || posts.length === 0) {
+        container.innerHTML += '<p>Post not found for this slug.</p>';
+        return;
+      }
+      const post = posts[0];
+      // Format date
+      let formattedDate = '';
+      if (post.date) {
+        const jsDate = new Date(post.date);
+        formattedDate = jsDate.toLocaleDateString('en-US', {
+          year: 'numeric', month: 'long', day: 'numeric'
+        });
+      }
+      // Render post
+      container.innerHTML += `
+        <h1 class="post-title">${post.title}</h1>
+        <div class="post-meta">By ${post.author} &middot; <span>${formattedDate}</span></div>
+        <img class="post-image" src="${post.image_url || ''}" alt="${post.title} image" onerror="this.style.display='none'" />
+        <div class="post-body">${post.body ? post.body.replace(/\n/g, '<br>') : ''}</div>
+        <a class="back-link" href="blog.html#blog">&larr; Back to Blog</a>
+      `;
+    }
+    loadPost();
+  </script>
+</body>
+</html>

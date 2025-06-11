@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <style>
+            
+            
+            @media (max-width: 1200px) {
+                header {
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 15px;
+                }
+                
+
+                nav {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                .list {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                img.logo {
+                    width: 150px;
+                }
+
+                #bg {
+                    width: 90%;
+                }
+            }
+            @media (max-width: 768px) {
+    body{
+        max-height: 80vh;
+    }
+
+
+    button {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    body{
+        min-height: 80vh;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .list {
+        padding: 0;
+        gap: 5px;
+    }
+
+    img.logo {
+        width: 120px;
+    }
+
+  
+
+    
+
+    button {
+        font-size: 12px;
+        width: 90%;
+        padding: 8px;
+    }
+}
+@media screen and (max-width: 991px){
+    .carousel{
+        margin-top: 250px !important;
+    }
+    .carousel .list .item{
+        width: 90%;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail .specifications{
+        overflow: auto;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail .title{
+        font-size: 2em;
+    }
+}
+@media screen and (max-width: 767px){
+    .carousel{
+        margin-top: 300px !important; 
+    }
+    .carousel{
+        height: 600px;
+    }
+    .carousel .list .item{
+        width: 100%;
+        font-size: 10px;
+    }
+    
+    .carousel .list{
+        height: 100%;
+    }
+    .carousel .list .item:nth-child(2) .introduce{
+        width: 50%;
+    }
+    
+    .carousel .list .item img{
+        width: 40%;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail{
+        backdrop-filter: blur(10px);
+        font-size: small;
+    }
+    .carousel .list .item:nth-child(2) .introduce .des,
+    .carousel.showDetail .list .item:nth-child(2) .detail .des{
+        height: 100px;
+        overflow: auto;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail .checkout{
+        display: flex;
+        width: max-content;
+        float: right;
+    }
+    header{
+        margin-bottom: 700px !important;
+    }
+}
+
+        </style>
+        
+        <title>Home</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img class="logo" src="111.png" alt="logo" style="margin-top: 100px !important;"></a>
+            <nav>
+                <ul class="list">
+                    <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+                </ul>
+                <a href="contact.html" target="_blank"><button class="button">Contact</button></a>
+            </nav>
+        </header>
+        <div class="carousel">
+            <div class="list">
+                <div class="item">
+                    <img src="h1.jpg" alt="">
+                    <div class="introduce">
+                        <div class="title">
+                            Explored Them All?
+                        </div>
+                        <div class="topic">Coming Soon</div>
+                        <div class="des">
+                            
+                        </div>
+                        <button class="seeMore">See More &#8599</button>
+                    </div>
+                    <div class="detail">
+                        <div class="title">Coming Soon</div>
+                        <div class="des"></div>
+                        <div class="specifications">
+                            <p>
+                                We are working day and night to add more and more places to our list. 
+                                Stay tuned for exciting updates and new destinations! 
+                                Thank You
+                            </p>
+                            
+                        </div>
+
+                        <div class="checkout">
+                        
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="w.webp" alt="">
+                    <div class="introduce">
+                        <div class="title">
+                            Vibrant
+                        </div>
+                        <div class="topic">Wayanad</div>
+                        <div class="des">
+                            Wayanad is a picturesque district in Kerala, India, known for its lush green landscapes, rolling hills, and rich biodiversity.
+                        </div>
+                        <button class="seeMore">See More &#8599</button>
+                    </div>
+                    <div class="detail">
+                        <div class="title">Wayanad</div>
+                        
+                        <div class="specifications">
+                            <p>
+                                Wayanad is a picturesque district in Kerala, India, known for its lush green landscapes, rolling hills, and rich biodiversity. 
+                                Nestled in the Western Ghats, it is a haven for nature lovers and adventure enthusiasts alike. 
+                                The region is characterized by its coffee and spice plantations, dense forests, and serene waterfalls.
+                            </p>
+                            
+                        </div>
+
+                        <div class="checkout">
+                        <a href="Wayanad.html"><button>View</button></a>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="al.jpg" alt="">
+                    <div class="introduce">
+                        <div class="title">
+                            Stunning
+                        </div>
+                        <div class="topic">Alappey</div>
+                        <div class="des">
+                            Alappuzha, also known as Alleppey, is a picturesque town in Kerala, India, famous for its backwaters and houseboat cruises. 
+                        </div>
+                        <button class="seeMore">See More &#8599</button>
+                    </div>
+                    <div class="detail">
+                        <div class="title">Alappey</div>
+                        <div class="des"></div>
+                        <div class="specifications">
+                            <p>
+                                Alappuzha, also known as Alleppey, is a picturesque town in Kerala, India, famous for its backwaters and houseboat cruises. 
+                                It is often referred to as the "Venice of the East" due to its intricate network of canals and lagoons. 
+                                The town is situated on the Arabian Sea coast and is renowned for its scenic beauty, lush green landscapes, and vibrant culture.
+                            </p>
+                            
+                        </div>
+
+                        <div class="checkout">
+                        <a href="Alappey.html"><button>View</button></a>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="m.jpg" alt="">
+                    <div class="introduce">
+                        <div class="title">
+                            Breathtaking 
+                        </div>
+                        <div class="topic">Munnar</div>
+                        <div class="des">
+                            Munnar is a hill station located in the Western Ghats mountain range in Kerala, India. 
+                        </div>
+                        <button class="seeMore">See More &#8599</button>
+                    </div>
+                    <div class="detail">
+                        <div class="title">Munnar</div>
+                        <div class="des">Name</div>
+                        <div class="specifications">
+                            <p>
+                                Munnar is a picturesque hill station nestled in the Idukki district of Kerala, India. 
+                                Known for its rolling hills blanketed with lush tea plantations, Munnar sits at the confluence of three mountain streams—Mudrapuzha, Nallathanni, and Kundala. 
+                                The town is situated at an altitude of around 1,600 meters above sea level, offering a cool and refreshing climate throughout the year, making it a popular retreat for travelers seeking respite from the heat of the plains.
+                            </p>
+                            
+                        </div>
+
+                        <div class="checkout">
+                        <a href="Munnar.html"><button>View</button></a>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="o.jpg" alt="">
+                    <div class="introduce">
+                        <div class="title">
+                            Scenic
+                        </div>
+                        <div class="topic">Ooty</div>
+                        <div class="des">
+                            Ooty, nestled in the Nilgiri Hills, is a serene hill station known for its lush tea gardens, cool climate, and picturesque landscapes.
+ 
+                        </div>
+                        <button class="seeMore">See More &#8599</button>
+                    </div>
+                    <div class="detail">
+                        <div class="title">Ooty</div>
+                        <div class="des"></div>
+                        <div class="specifications">
+                            <p>
+                                Ooty is a charming hill station nestled in the Nilgiri district of Tamil Nadu, India.
+                                Famed for its verdant landscapes and expansive tea estates, Ooty is set amidst rolling hills and dense forests.
+                                Perched at an elevation of about 2,240 meters above sea level, it enjoys a cool, temperate climate year-round, making it a favored getaway for those looking to escape the warmth of the lowlands.
+
+                                
+                            </p>
+                            
+                        </div>
+
+                        <div class="checkout">
+                        <a href="OOTY.html"><button>View</button></a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="back">Go Back &#8599</button>
+            <button id="next">></button>
+        </div>
+        </div>
+        <footer>
+        <div class="footer-content">
+            <p>© WANDERWISE™  All rights reserved.</p>
+            <ul class="footer-nav">
+                <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+    <script src="app.js"></script>
+    </body>
+</html>

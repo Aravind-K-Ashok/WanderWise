@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wanderwise</title>
+  <link rel="stylesheet" href="style3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    html,
+    body {
+      height: 100%;
+      scroll-behavior: smooth;
+      overflow-y: scroll;
+      background: ghostwhite;
+      color: #1a1a1a;
+    }
+    h2 p{
+        color: white;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+    
+    section {
+      min-height: 100vh;
+      width: 100vw;
+      padding: 120px 40px 60px; 
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      scroll-margin-top: 90px; }
+
+
+
+    
+
+
+
+
+
+    #section1 {
+      background: linear-gradient(to right, #eef2ff, #f0f4ff);
+      color: #1f2b6c;
+      flex-wrap: wrap;
+    }
+
+    #section1 .main-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    #section1 .text-content {
+      max-width: 45%;
+      min-width: 300px;
+    }
+
+    #section1 .text-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 30px;
+      line-height: 1.1;
+    }
+
+    #section1 .text-content p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #333;
+      margin-top: 30px;
+    }
+
+    #section1 .explore {
+      background-color: #1f2b6c;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #section1 .explore:hover {
+      background-color: #0e1b4d;
+    }
+
+    #section1 .image-content {
+      max-width: 600px;
+      min-width: 280px;
+      text-align: center;
+    }
+
+    #section1 .image-content img {
+      max-width: 100%;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      user-select: none;
+    }
+
+    
+    @media (max-width: 900px) {
+      #section1 .main-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #section1 .text-content,
+      #section1 .image-content {
+        max-width: 100%;
+      }
+
+      #section1 .text-content h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+  
+
+
+
+
+
+
+
+    #section2 {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1484950763426-56b5bf172dbb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+        no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow: hidden;
+      flex-direction: column;
+      padding-top: 80px;
+      padding-bottom: 60px;
+      justify-content: center;
+      scroll-snap-align: start;
+    }
+
+    #section2 .darkness {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: radial-gradient(circle 250px at center, transparent 0%, rgba(0, 0, 0, 0.95) 100%);
+      pointer-events: none;
+      transition: background 0.1s;
+      z-index: 1;
+    }
+
+    #section2 .content-wrapper {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    #section2 h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+
+    #section2 p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Buttons container */
+    #section2 .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+   
+    #section2 .btn {
+      background: rgba(255 255 255 / 0.15);
+      border: 2px solid rgba(255 255 255 / 0.3);
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 40px;
+      cursor: pointer;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+      user-select: none;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 15px rgba(255 255 255 / 0.1);
+      text-shadow: 0 0 6px rgba(255 255 255, 0.7);
+    }
+
+
+    #section2 .btn:hover {
+      background: rgba(255 255 255 / 0.5);
+      color: #1f2b6c;
+      box-shadow: 0 0 25px #ffd700, 0 0 35px #ffd700;
+      transform: scale(1.1);
+    }
+
+
+    #section2 .btn:active {
+      box-shadow: 0 0 40px #ffd700, 0 0 50px #ffd700;
+      transform: scale(1.05);
+    }
+
+   
+
+
+
+  </style>
+</head>
+
+<body>
+
+     <header>
+    <a href="index.html"><img class="logo" src="111.png" alt="logo" /></a>
+    <nav>
+      <ul class="list">
+        
+        <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+      </ul>
+      <a href="contact.html">
+        <button class="button">Contact</button>
+      </a>
+    </nav>
+  </header>
+  
+
+ 
+  <section id="section1">
+    <div class="main-section">
+      <div class="text-content">
+        <h1>Discover your perfect travel experience</h1>
+        <button class="explore">Explore</button>
+        <p>Affordable and luxury travel deals wait you Here!</p>
+      </div>
+      <div class="image-content">
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=861,h=943,fit=crop/mnlvJpnMLDc9lz1y/generated/generated-m5KwEVPyjziLGKEa.png" alt="Travel Image" />
+      </div>
+    </div>
+  </section>
+
+  <section id="section2">
+    <div class="darkness" id="darkness"></div>
+    <div class="content-wrapper">
+      <h2 style="color: #eef2ff;">Why Choose Wanderwise?</h2>
+      <p style="color: #eef2ff;">Experience the magic of travel with personalized plans, exclusive deals, and expert guidance that makes your journey unforgettable.</p>
+<p style="color: #eef2ff;">Services Provided:</p>
+      <div class="btn-group">
+        <a href=""><button class="btn">Personalized Travel Plan Helper</button></a>
+        <a href="Explore.html"><button class="btn"></button><button class="btn">Explore</button></a>
+        <a href="blog.html"><button class="btn"></button> <button class="btn">Genuine travel experiences</button></a>
+       <a href="contact.html"><button class="btn">24/7 Support</button></a> 
+      </div>
+    </div>
+  </section>
+
+  <script>
+
+    const darkness = document.getElementById('darkness');
+    const section2 = document.getElementById('section2');
+    section2.addEventListener('mousemove', (e) => {
+      const rect = section2.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      darkness.style.background = `radial-gradient(circle 250px at ${x}px ${y}px, transparent 0%, rgba(0, 0, 0, 0.95) 100%)`;
+    });
+    section2.addEventListener('mouseleave', () => {
+      darkness.style.background = `radial-gradient(circle 250px at center, transparent 0%, rgba(0, 0, 0, 0.95) 100%)`;
+    });
+
+    
+  </script>
+  
+<footer>
+        <div class="footer-content">
+            <p>© WANDERWISE™  All rights reserved.</p>
+            <ul class="footer-nav">
+        <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
