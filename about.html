@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+    }
+
+    .top-container {
+      display: flex;
+      width: 100%;
+      min-height: 40vh;
+    }
+
+    .side-label {
+      background-color: #ffb6c1;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-size: 2em;
+      font-weight: bold;
+      color: black;
+      width: 80px;
+    }
+
+    .intro-text {
+      flex: 1;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      font-size: 1.2em;
+      
+    }
+
+    .member-section {
+      display: flex;
+      width: 100%;
+      height: 220px;
+    }
+
+    .member-desc, .member-photo {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-size: 1em;
+      color: white;
+    }
+
+    .member-photo img {
+      height: 150px;
+      width: auto;
+      max-width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .member-photo img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Unique vibrant colors for each member */
+    .pink { background-color: #f48fb1; }
+    .purple { background-color: #b39ddb; }
+    .blue { background-color: #81d4fa; }
+    .green { background-color: #a5d6a7; }
+    .orange { background-color: #ffcc80; }
+
+    @media (max-width: 768px) {
+      .top-container,
+      .member-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .side-label {
+        writing-mode: horizontal-tb;
+        transform: rotate(0deg);
+        width: 100%;
+        height: 60px;
+        font-size: 1.5em;
+      }
+
+      .member-photo,
+      .member-desc {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+   <header>
+    <a href="index.html"><img class="logo" src="111.png" alt="logo" /></a>
+    <nav>
+      <ul class="list">
+         <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+      </ul>
+      
+      <a href="1.pdf" target="_blank" style="margin-left: 50px;">
+        <button class="button">RESUME</button>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Top Heading -->
+  <div class="top-container">
+    <div class="side-label">About us</div>
+    <div class="intro-text">
+      WanderWise is a user-friendly and responsive travel web application crafted to transform the way people plan and experience their journeys. Whether you're a seasoned traveler or setting out for your very first adventure, WanderWise helps you discover amazing destinations, plan smarter with interactive tools, and share your experiences through an engaging travel blog.<br>WanderWise is a user-friendly and responsive travel web application crafted to transform the way people plan and experience their journeys. Whether you're a seasoned traveler or setting out for your very first adventure, WanderWise helps you discover amazing destinations, plan smarter with interactive tools, and share your experiences through an engaging travel blog.
+    </div>
+  </div>
+
+  <!-- Member 1 -->
+  <div class="member-section">
+    <a href="https://gourinathmg.github.io/my-website/" target="_blank" class="member-photo">
+      <img src="gouri.jpg" alt="Member 1">
+    </a>
+    <div class="member-desc pink">
+      <p>Gourinath M G<br>
+
+AM.SC.U4CSE24023<br>
+
+Creative Designer and Content Strategist ensuring the site is informative, intuitive, and visually attractive.</p>
+    </div>
+  </div>
+
+  <!-- Member 2 -->
+  <div class="member-section">
+    <div class="member-desc purple">
+      <p>Aravind K Ashok<br>
+
+AM.SC.U4CSE24010<br>
+
+UI designer,Back-end Developer and GitHub Coordinator, handling functionality and code management.</p>
+    </div>
+    <a href="https://aravind-k-ashok.github.io/my-website-final/" target="_blank" class="member-photo">
+      <img src="aravind.jpg" alt="Member 2">
+    </a>
+  </div>
+
+  <!-- Member 3 -->
+  <div class="member-section">
+    <a href="https://abhinandaj.github.io/HTML-Project-1/" target="_blank" class="member-photo">
+      <img src="abhinand.jpg" alt="Member 3">
+    </a>
+    <div class="member-desc blue">
+      <p>Abhinand A J<br>
+
+AM.SC.U4CSE24002<br>
+
+Front-end Developer and UI Designer with a focus on creating smooth, engaging user experiences.</p>
+    </div>
+  </div>
+
+  <!-- Member 4 -->
+  <div class="member-section">
+    <div class="member-desc green">
+      <p>Hridunand M<br>
+
+AM.SC.U4CSE24025<br>
+
+UI designer and Testing and Optimization Lead ensuring responsiveness and performance across all devices</p>
+    </div>
+    <a href="https://hridunand.github.io/portfolio/" target="_blank" class="member-photo">
+      <img src="hridunand.jpg" alt="Member 4">
+    </a>
+  </div>
+
+  <!-- Member 5 -->
+  <div class="member-section">
+    <a href="https://gopi1111767.github.io/Portfolio/" target="_blank" class="member-photo">
+      <img src="gopi.jpg" alt="Member 5">
+    </a>
+    <div class="member-desc orange">
+      <p>Medam Thirumala Gopi <br>AM.SC.U4CSE24056<br>
+
+Research and Content Developer contributing to destination content, blogs, and user-oriented features.</p>
+    </div>
+  </div>
+  <footer>
+        <div class="footer-content">
+            <p>© WANDERWISE™  All rights reserved.</p>
+            <ul class="footer-nav">
+        <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
