@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family:'Lucida Sans';
+      background-color:lightblue;
+      padding: 40px;
+    }
+    .container {
+      max-width: 600px;
+      background: white;
+      margin: auto;
+      padding: 20px;
+      box-shadow:10px;
+      border-radius: 8px;
+    }
+    h2 {
+      text-align: center;
+      color:black;
+    }
+    label {
+      display: block;
+      margin:5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+background-color:red;
+      color: white;
+      padding:20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color:green;
+    }
+  </style>
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+    <header>
+    <a href="index.html"><img class="logo" src="111.png" alt="logo" /></a>
+    <nav>
+      <ul class="list">
+         <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+      </ul>
+      
+      <a href="contact.html" target="_blank" style="margin-left: 50px;">
+        <button class="button">Contact</button>
+      </a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Contact Us</h2>
+    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+    </form>
+  </div>
+  <footer>
+        <div class="footer-content">
+            <p>© WANDERWISE™  All rights reserved.</p>
+            <ul class="footer-nav">
+                <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>
