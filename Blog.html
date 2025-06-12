@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WanderWise</title>
+  <style>
+    @media screen and (max-width: 678px) {
+    .carousel .list .item .content{
+        padding-right: 0 !important;
+    }
+    .carousel{
+      margin-top: 30px !important;
+    }
+    .carousel .list .item .content .title{
+        font-size: 30px  !important;
+    }
+}
+    @media screen and (max-width: 1023px) {
+    .banner .slider{
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(300px);
+    }
+    .banner .content h1{
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 10px 20px #000;
+        font-size: 7em;
+    }
+    .banner .content .author{
+        color: #fff;
+        padding: 20px;
+        text-shadow: 0 10px 20px #000;
+        z-index: 2;
+        max-width: unset;
+        width: 100%;
+        text-align: center;
+        padding: 0 30px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .banner .slider{
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(180px);
+    }
+    .banner .content h1{
+        font-size: 4em!important;
+    }
+           @media (max-width: 1200px) {
+                header {
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 15px;
+                }
+                
+
+                nav {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                .list {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                img.logo {
+                    width: 150px;
+                }
+
+                #bg {
+                    width: 90%;
+                }
+            }
+            @media (max-width: 768px) {
+    body{
+        max-height: 80vh;
+    }
+
+
+    button {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    body{
+        min-height: 80vh;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .list {
+        padding: 0;
+        gap: 5px;
+    }
+
+    img.logo {
+        width: 120px;
+    }
+
+  
+
+    
+
+    button {
+        font-size: 12px;
+        width: 90%;
+        padding: 8px;
+    }
+}
+}
+
+
+  </style>
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  
+  <header>
+    <a href="index.html"><img class="logo" src="111.png" alt="logo" /></a>
+    <nav>
+      <ul class="list">
+        <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+      </ul>
+      <a href="submit.html"><button class="button2">WRITE A BLOG</button></a>
+      <a href="contact.html" target="_blank" style="margin-left: 50px;">
+        <button class="button">Contact</button>
+      </a>
+    </nav>
+  </header>
+
+  
+  <section id="carousel">
+    <div class="carousel">
+      <div class="list">
+        
+        <div class="item">
+          <img src="o.jpg" alt="Munnar 1" />
+          <div class="content">
+            <div class="author">Abhinand</div>
+            <div class="title">Stunning</div>
+            <div class="topic">Ooty</div>
+            <div class="des">Travelogue on my trip to Ooty.</div>
+            <div class="buttons"><a href="OotyBlog.html"><button>SEE MORE</button></a></div>
+          </div>
+        </div>
+        
+        <div class="item">
+          <img src="an.jpg" alt="Munnar 2" />
+          <div class="content">
+            <div class="author">Aravind</div>
+            <div class="title">Stellar</div>
+            <div class="topic">Kochi</div>
+            <div class="des">Blog on my trip to Kochi.</div>
+            <div class="buttons"><a href="KochiBlog.html"><button>SEE MORE</button></a></div>
+          </div>
+        </div>
+        
+        <div class="item">
+          <img src="munnar.webp" alt="Munnar 3" />
+          <div class="content">
+            <div class="author">Gourinath</div>
+            <div class="title">Scenic</div>
+            <div class="topic">Munnar</div>
+            <div class="des">My exquisite trip to Munnar</div>
+            <div class="buttons"><a href="MunnarBlog.html"><button>SEE MORE</button></div></a>
+          </div>
+        </div>
+        
+        <div class="item">
+          <img src="alappey.jpg" alt="Munnar 4" />
+          <div class="content">
+            <div class="author">Hridunand</div>
+            <div class="title">Breathtaking</div>
+            <div class="topic">Alappey</div>
+            <div class="des">Personal Travel blog on my trip to Alappey</div>
+            <div class="buttons"><a href="AlappeyBlog.html"><button>SEE MORE</button></a></div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="thumbnail">
+        <div class="item">
+          <img src="o.jpg" alt="Thumb 1" />
+          <div class="content">
+            <div class="title">Ooty</div>
+            <div class="description">Blog</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="an.jpg" alt="Thumb 2" />
+          <div class="content">
+            <div class="title">Kochi</div>
+            <div class="description">Blog</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="munnar.webp" alt="Thumb 3" />
+          <div class="content">
+            <div class="title">Munnar</div>
+            <div class="description">Blog</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="alappey.jpg" alt="Thumb 4" />
+          <div class="content">
+            <div class="title">Alappey</div>
+            <div class="description">Blog</div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="arrows">
+        <button id="prev">&lt;</button>
+        <button id="next">&gt;</button>
+      </div>
+
+    
+      <div class="time"></div>
+    </div>
+  </section>
+   <div class="test">
+                <div class="banner">
+                <div class="slider" style="--quantity: 4">
+                <div class="item" style="--position: 1"><a href="blog.html"><img src="a.jpeg" alt=""></a></div>
+                <div class="item" style="--position: 2"><a href="blog.html"><img src="b.jpg" alt=""></a></div>
+                <div class="item" style="--position: 3"><a href="blog.html"><img src="c.jpg" alt=""></a></div>
+                <div class="item" style="--position: 4"><a href="blog.html"><img src="d.jpg" alt=""></a></div>
+                </div>
+                 <div class="content">
+                <h1 data-content="WanderWise">
+                    WanderWise
+                </h1>
+                <div class="author">
+                    <h2>Travel Free</h2>
+                    <p><b>Take only memories, leave only footprints.</b></p>
+
+                </div>
+                <div class="model"></div>
+            </div>
+            </div>
+         
+            </div>
+       
+
+  
+  <section id="blog" class="blog-container">
+    <h1>Our Travel Stories</h1>
+    <div id="posts-list">
+      
+    </div>
+  </section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script>
+    
+    const SUPABASE_URL = 'https://zeyhknekioqqmgfpdsnr.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpleWhrbmVraW9xcW1nZnBkc25yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkxMDYwMjcsImV4cCI6MjA2NDY4MjAyN30.mKgF78Hly1YnjAbSn7eknjCIiYwlQVS52_2Mqh5oGaY';
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  </script>
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const postsList = document.getElementById("posts-list");
+
+      try {
+        
+        const { data: posts, error } = await supabaseClient
+          .from("posts")
+          .select("*")
+          .order("date", { ascending: false });
+
+        if (error) {
+          console.error("Error fetching posts:", error);
+          postsList.innerHTML =
+            "<p>Failed to load posts. Please try again later.</p>";
+          return;
+        }
+
+        if (!posts || posts.length === 0) {
+          postsList.innerHTML = "<p>No posts published yet.</p>";
+        } else {
+          posts.forEach((post) => {
+            // Debug: Log each post object
+            console.log('[DEBUG] Rendering post:', post);
+            if (!post.title || !post.slug) {
+              console.warn('[DEBUG] Post missing title or slug:', post);
+            }
+            const imageURL = post.image_url || "";
+            let formattedDate = "";
+            if (post.date) {
+              const jsDate = new Date(post.date);
+              formattedDate = jsDate.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              });
+            }
+            const html = `
+              <a href="post.html?slug=${post.slug}" class="post-link" style="text-decoration:none;">
+                <div class="post-preview">
+                  <img src="${imageURL}" alt="${post.title} Thumbnail" />
+                  <div class="post-info">
+                    <h2>${post.title}</h2>
+                    <p class="post-date">${formattedDate}</p>
+                    <p class="post-excerpt">${post.excerpt}</p>
+                  </div>
+                </div>
+              </a>
+            `;
+            postsList.insertAdjacentHTML("beforeend", html);
+          });
+        }
+      } catch (err) {
+        console.error("Unexpected error:", err);
+        postsList.innerHTML =
+          "<p>Failed to load posts. Please try again later.</p>";
+      }
+    });
+  </script>
+
+  
+  <script src="app2.js"></script>
+           <footer>
+        <div class="footer-content">
+            <p>© WANDERWISE™  All rights reserved.</p>
+            <ul class="footer-nav">
+        <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
