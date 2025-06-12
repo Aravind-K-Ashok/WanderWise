@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kerala Travel Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+
+    .popup-btn {
+      margin-top: 5px;
+      padding: 6px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .popup-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+  // Initialize the map centered on Kerala
+  var map = L.map('map').setView([10.3, 76.5], 8.3);
+
+  // Add OpenStreetMap tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Updated Location markers with Street View URLs
+  const locations = [
+    {
+      name: "Munnar",
+      lat: 10.0889,
+      lon: 77.0595,
+      url: "https://maps.app.goo.gl/bqXkFC42HGGjcsze8"
+    },
+    {
+      name: "Ooty",
+      lat: 11.4064,
+      lon: 76.6932,
+      url: "https://maps.app.goo.gl/Dobkq12CdjRTtCmF8"
+    },
+    {
+      name: "Alappuzha",
+      lat: 9.4981,
+      lon: 76.3388,
+      url: "https://maps.app.goo.gl/SuLQw39SM7ayDPoB8"
+    },
+    {
+      name: "Wayanad",
+      lat: 11.7150,
+      lon: 76.1310,
+      url: "https://maps.app.goo.gl/jkcLZn1XBtcsJ5zR6"
+    }
+  ];
+
+  // Add markers with popups
+  locations.forEach(loc => {
+    const marker = L.marker([loc.lat, loc.lon]).addTo(map);
+    const popupContent = `
+      <strong>${loc.name}</strong><br>
+      <button class="popup-btn" onclick="window.open('${loc.url}', '_blank')">Open in Google Map</button>
+    `;
+    marker.bindPopup(popupContent);
+  });
+</script>
+
+</body>
+</html>
+

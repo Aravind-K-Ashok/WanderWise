@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Journal - WanderWise</title>
+  <link rel="stylesheet" href="travel-journal.css" />
+</head>
+<body>
+  <header>
+    <a href="index.html"><img class="logo" src="111.png" alt="logo" /></a>
+    <nav>
+      <ul class="list">
+         <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+      </ul>
+      <a style="margin-left: 50px;">
+         <button class="button" id="addEntryBtn">+ New Entry</button>
+      </a>
+    </nav>
+  </header>
+  <main>
+    <h1>My Travel Journal</h1>
+    <label for="sortLocation">Sort by Location:</label>
+    <select id="sortLocation">
+      <option value="default">-- Select --</option>
+    </select>
+    <div id="journalContainer"></div>
+  </main>
+
+  <!-- Modal -->
+  <div id="entryModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>New Journal Entry</h2>
+      <input type="text" id="title" placeholder="Title" required />
+      <input type="text" id="location" placeholder="Location" required />
+      <textarea id="description" placeholder="Write your experience..." required></textarea>
+      <input type="file" id="photo" accept="image/*" />
+      <button onclick="addEntry()">Post Entry</button>
+    </div>
+  </div>
+
+  <script src="travel-journal.js"></script>
+  <footer><div class="footer-content">
+            <p>© WANDERWISE™  All rights reserved.</p>
+            <ul class="footer-nav">
+        <li><a href="in.html">Menu</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="Contact.html">About us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Reviews.html">Reviews</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+
